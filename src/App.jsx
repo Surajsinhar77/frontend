@@ -1,24 +1,27 @@
 import './App.css'
-
-import Home from './Home.jsx';
+import Home from './Pages/Home'
+import Contact from './Pages/Contact'
+import Service from './Pages/Service'
+import Navbar from './components/Navbar.jsx'
+import { useState } from 'react'
 
 
 function App() {
+  const [a , setA] = useState(8); // hooks
+  function inc(){
+    setA(a+1)
+    console.log(a)
+  }
 
+  
   return (
-    <div className="app"> 
-      <Home/>
-      <div>  App page 
-        <h1>heading one </h1>
-        <h1>heading tow </h1>
-        {a}
-        <div className='app1'> 
-
-        </div>
-        <div> 
-          third div
-        </div>
-      </div>
+    <div>
+      <Navbar/>
+      
+      <button onClick={inc}> inc </button>
+      <h1>Home page {a} </h1> 
+      {/* <Contact></Contact> */}
+      {/* <Service/> */}
     </div>
   )
 }
