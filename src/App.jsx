@@ -7,21 +7,16 @@ import { useState } from 'react'
 
 
 function App() {
-  const [a , setA] = useState(8); // hooks
+  const [value , setValue] = useState(8); // hooks
 
   function inc(){
-    setA(a+1)
-    console.log(a)
+    setValue(value+1)
+    console.log(value)
   }
 
   
   return (
-    <div>
-      <Navbar/>
-      
-      <button onClick={inc}> inc </button>
-      <h1>Home page {a} </h1> 
-    </div>
+    <Navbar/>
   )
 }
 
