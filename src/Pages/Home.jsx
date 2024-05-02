@@ -1,9 +1,18 @@
-
+import Navbar from "../components/Navbar";
+import { Card_post } from "../components/Card_post";
 function Home(){
     return (
-        <div>
-            Home page
-        </div>
+        <>
+            <Navbar/>
+            <div className="cards-for-post w-[75%] m-auto pt-5">
+                <Card_post/>
+                <Card_post/>
+                <Card_post/>
+                <Card_post/>
+                <Card_post/>
+                <Card_post/>
+            </div>
+        </>
     )
 }
 

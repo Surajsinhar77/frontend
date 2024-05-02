@@ -6,17 +6,11 @@ import Navbar from './components/Navbar.jsx'
 import { useState } from 'react'
 
 
+
 function App() {
-  const [value , setValue] = useState(8); // hooks
-
-  function inc(){
-    setValue(value+1)
-    console.log(value)
-  }
-
   
   return (
-    <Navbar/>
+    <Home/>
   )
 }
 
