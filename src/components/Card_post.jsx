@@ -1,7 +1,7 @@
 export function Card_post() {
     return (
         <>
-            <div className="card p-2 w-[25%] border rounded-lg">
+            <div className="card p-2 border-[0.5px] rounded-lg cursor-pointer">
                 <div className="images rounded-lg">
                     <img className="object-cover rounded-lg" src="./img/post.jpg" alt="post-image" />
                 </div>
@@ -16,7 +16,7 @@ export function Card_post() {
                             </h2>
 
                             <div className="flex items-center">
-                                <span className="bg-[#e669fb] w-1 h-12 mr-2 rounded-lg">
+                                <span className="bg-[#e669fb] w-[1.5px] h-12 mr-2 rounded-lg">
                                 </span>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, placeat.

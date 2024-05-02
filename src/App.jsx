@@ -10,7 +10,9 @@ import { useState } from 'react'
 function App() {
   
   return (
-    <Home/>
+    <div>
+      <Home/>
+    </div>
   )
 }
 
