@@ -1,8 +1,7 @@
 
 function Button(a){
-    console.log(a)
     return(
-        <button  className=" border px-3 py-1 rounded bg-gray-600 text-white"> {a.value}</button>
+        <button onClick={a?.onclick} className={`border px-3 py-1 rounded ${a?.bg} text-white`}> {a?.value}</button>
     )
 }
 
