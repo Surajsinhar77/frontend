@@ -10,6 +10,7 @@ function Home(){
         let response = await fetch('https://dummyjson.com/recipes?limit=10');
         response = await response.json();
         setData(response.recipes)
+        console.log(response.recipes)
     }
 
     useEffect(()=>{
