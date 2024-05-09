@@ -8,7 +8,7 @@ import Login from './Pages/Login.jsx'
 import About from './Pages/About.jsx'
 import Foodpage from './components/Foodpage.jsx'
 import { Routes, Route } from 'react-router-dom'
-
+import Foodpage from './components/Foodpage.jsx'
 
 function App() {
   const [data , setData ]= useState();
@@ -31,7 +31,8 @@ function App() {
         <Route path='/login' element={< Login />} />
         <Route path='/about' element={< About />} />
         <Route path='/contact' element={< Contact />} />
-        <Route path='/service' element={< Service />} />
+        <Route path='/service/' element={< Service />} />
+        <Route path='/product/:name' element={< Foodpage />} />
       </Routes>
       
       </>

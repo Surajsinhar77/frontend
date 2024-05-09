@@ -23,7 +23,7 @@ function Home(){
                 ">
                 {
                     data.map((data,index)=>
-                        <Link to={data?.name} key={index}> <Card_post data={data} /> </Link>
+                        <Link to={`/product/${data?.name}`} key={index}> <Card_post data={data} /> </Link>
                     )
                 }
             </div>
