@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import { Card_post } from "../components/Card_post";
 import { useEffect, useState } from "react";
-
+import {Link} from 'react-router-dom'
 
 function Home(){
     const [data, setData] = useState([]);
@@ -19,14 +19,11 @@ function Home(){
 
     return (
         <>
-            <Navbar/>
-            <div 
-                className="cards-for-post w-[75%] m-auto pt-5 grid  lg:grid-cols-3 gap-3 sm:grid-cols-1 md:grid-cols-2
+            <div className="cards-for-post w-[75%] m-auto pt-5 grid  lg:grid-cols-3 gap-3 sm:grid-cols-1 md:grid-cols-2
                 ">
                 {
                     data.map((data,index)=>
-                        <Card_post key={index} data={data} />
-
+                        <Link to={data?.name} key={index}> <Card_post data={data} /> </Link>
                     )
                 }
             </div>

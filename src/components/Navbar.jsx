@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "./UI/Button";
+import { Link } from "react-router-dom";
 
 function Navbar() {
     const [auth, setAuth] = useState(false);
@@ -14,10 +15,10 @@ function Navbar() {
                 <div className="btnAndNavlinsk flex gap-3">
                     <div className="navlinks flex cols items-center">
                         <ul className="flex gap-3">
-                            <li>  Home </li>
-                            <li>  About </li>
-                            <li>  Service </li>
-                            <li>  Blog </li>
+                            <Link to='/'> Home </Link>
+                            <Link to='/about'> About </Link>
+                            <Link to='/contact'> Contact </Link>
+                            <Link to='/service'> Service </Link>
                         </ul>
                     </div>
 
