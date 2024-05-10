@@ -8,21 +8,21 @@ import Login from './Pages/Login.jsx'
 import About from './Pages/About.jsx'
 import Foodpage from './components/Foodpage.jsx'
 import { Routes, Route } from 'react-router-dom'
-import Foodpage from './components/Foodpage.jsx'
+// import Foodpage from './components/Foodpage.jsx'
 
 function App() {
-  const [data , setData ]= useState();
+  // const [data , setData ]= useState();
 
-  async function getASingleData(){
-    let response = await fetch('https://dummyjson.com/recipes/1');
-    response = await response.json();
-    console.log(" res : ", response);
-    setData(response);
-  }
+  // async function getASingleData(){
+  //   let response = await fetch('https://dummyjson.com/recipes/1');
+  //   response = await response.json();
+  //   console.log(" res : ", response);
+  //   setData(response);
+  // }
 
-  useEffect(()=>{
-    getASingleData()
-  },[])
+  // useEffect(()=>{
+  //   getASingleData()
+  // },[])
   return (
       <>
       <Navbar/>
@@ -32,9 +32,9 @@ function App() {
         <Route path='/about' element={< About />} />
         <Route path='/contact' element={< Contact />} />
         <Route path='/service/' element={< Service />} />
-        <Route path='/product/:name' element={< Foodpage />} />
+        {/* <Route path='/product/:name' element={< Foodpage />} /> */}
       </Routes>
-      
+  
       </>
   )
 }

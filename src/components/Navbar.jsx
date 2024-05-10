@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./UI/Button";
 import { Link } from "react-router-dom";
-
+import About from "../Pages/About";
 function Navbar() {
     const [auth, setAuth] = useState(false);
     return (
@@ -15,6 +15,7 @@ function Navbar() {
                 <div className="btnAndNavlinsk flex gap-3">
                     <div className="navlinks flex cols items-center">
                         <ul className="flex gap-3">
+                            {/* sender */}
                             <Link to='/'> Home </Link>
                             <Link to='/about'> About </Link>
                             <Link to='/contact'> Contact </Link>
