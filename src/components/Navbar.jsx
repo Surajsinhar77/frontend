@@ -10,7 +10,7 @@ function Navbar() {
             <div className="flex w-[75%] m-auto justify-between py-4 items-center">
                 <div className="logo flex items-center">
                     <div className="logo w-24 h-24 flex items-center">
-                        <img src="https://shorturl.at/lAJX2" alt="logo" />
+                        <Link to='/'> <img src="https://shorturl.at/lAJX2" alt="logo" /> </Link>
                     </div>
                 </div>
 
