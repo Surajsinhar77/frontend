@@ -8,10 +8,21 @@ function Navbar() {
         <section>
 
             <div className="flex w-[75%] m-auto justify-between py-4 items-center">
-                <div className="logo">
-                    <h1>Logo</h1>
+                <div className="logo flex items-center">
+                    <div className="logo w-24 h-24 flex items-center">
+                        <img src="https://shorturl.at/lAJX2" alt="logo" />
+                    </div>
                 </div>
 
+                <div className="serchItem flex gap-2">
+                    <input 
+                    className="block w-full rounded-md border-0 py-1.5 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                    type="text" 
+                    placeholder="Search"
+                    />
+
+                    <Button value="Search"/>
+                </div>
                 <div className="btnAndNavlinsk flex gap-3">
                     <div className="navlinks flex cols items-center">
                         <ul className="flex gap-3">

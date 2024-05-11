@@ -22,8 +22,8 @@ function Home(){
             <div className="cards-for-post w-[75%] m-auto pt-5 grid lg:grid-cols-3 gap-3 sm:grid-cols-1 md:grid-cols-2
                 ">
                 {
-                    data.map((data,index)=>
-                        <Link to={`/product/${data?.name}`} key={index}> <Card_post data={data} /> </Link>
+                    data.map((element,index)=>
+                        <Link to={`/product/${element?.id}`} key={index}> <Card_post data={element} /> </Link>
                     )
                 }
             </div>

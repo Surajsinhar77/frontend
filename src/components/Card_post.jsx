@@ -1,5 +1,4 @@
 export function Card_post({data}) {
-
     return (
         <>
             <div className="card p-2 border-[0.5px] rounded-lg cursor-pointer">

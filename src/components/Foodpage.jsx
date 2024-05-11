@@ -1,21 +1,25 @@
 import { IoMdTime } from "react-icons/io";
 import { FcRating } from "react-icons/fc";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { space } from "postcss/lib/list";
+import { useParams } from "react-router-dom";
 
-export default function Foodpage({ data }) {
-    // const [rating, setRating] = useState([]);
+export default function Foodpage() {
+    const [data, setData] = useState();
+    const { id } = useParams();
+    
+    async function gettingDataById(){
+        // const response = await(await fetch(`https://dummyjson.com/recipes/${id}`)).json();
+        let response = await fetch(`https://dummyjson.com/recipes/${id}`);
+        response = await response.json();
+        setData(response);
+    }
 
-    // function setUpRating() {
-    //     for (let a = 0; a < data?.rating ; a++) {
-    //         setRating([...rating, <FcRating />]);
-    //     }
-    // }
-    // const array = new Array(Math.floor(data?.rating));
-    // console.log(Math.floor(data?.rating));
 
+    useEffect(()=>{
+        gettingDataById();
+    },[])
     return (
-        // <div> dynamic food page </div>
         <div className="container m-auto">
             <div className="heading-class text-center m-8">
                 <h1 className="text-5xl font-medium"> {data?.name} </h1>
@@ -65,7 +69,7 @@ export default function Foodpage({ data }) {
                         <div className="instructions-container">
                             <ul>
                                 {
-                                    data?.instructions.map((item, index) =>
+                                    data?.instructions?.map((item, index) =>
                                         <li key={index}>
                                             <span> Step {index + 1} : {item} </span>
                                         </li>
@@ -78,13 +82,12 @@ export default function Foodpage({ data }) {
 
                 <div className="rightPart w-[25%] flex flex-col gap-5 border items-center pt-6">
                     <div className="author">
-                        {console.log(data?.rating)}
                         <span>
-                            <h4 className="flex items-center"> <h2 className="text-2xl">User</h2> : {data?.userId} </h4>
+                            <h2 className="flex items-center"> <h4 className="text-2xl">User</h4> : {data?.userId} </h2>
                         </span>
 
                         <span >
-                            <h4 className="flex items-center">  <h2 className="text-2xl"> reviewCount </h2> : {data?.reviewCount} </h4>
+                            <h2 className="flex items-center">  <h4 className="text-2xl"> reviewCount </h4> : {data?.reviewCount} </h2>
                         </span>
 
 
