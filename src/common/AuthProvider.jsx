@@ -16,6 +16,7 @@ export default function AuthProvider({children}){
         setSearchData(Data);
         console.log("after search ", Data)
     }
+    
     return(
         <userContext.Provider value={
             {
