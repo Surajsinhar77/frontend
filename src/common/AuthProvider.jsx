@@ -1,15 +1,13 @@
 import { useContext, createContext, useState } from "react";
-
 const userContext = createContext();
-
 
 export default function AuthProvider({children}){
     const [data, setData] = useState([]);
     const [search , setSearch] = useState('');
     const [searchData, setSearchData ] = useState([]);
 
+
     function searchItem(){
-        console.log("Serching is trigger")
         const Data = data.filter((item, index)=> 
             item?.name?.toLowerCase().includes(search.toLowerCase())
         )
@@ -35,4 +33,4 @@ export default function AuthProvider({children}){
 }
 
 
-export const useAuth = () => useContext(userContext);
+export function useAuth() {return useContext(userContext)};
