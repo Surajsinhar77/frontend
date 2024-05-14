@@ -8,7 +8,7 @@ export default function AuthProvider({children}){
 
 
     function searchItem(){
-        const Data = data.filter((item, index)=> 
+        const Data = data.filter((item)=> 
             item?.name?.toLowerCase().includes(search.toLowerCase())
         )
         setSearchData(Data);
