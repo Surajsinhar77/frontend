@@ -5,9 +5,8 @@ import About from "../Pages/About";
 import { useAuth } from "../common/AuthProvider";
 
 function Navbar() {
-    const [auth, setAuth] = useState(false);
 
-    const { setSearch , searchItem} = useAuth();
+    const { setSearch , searchItem, user} = useAuth();
 
     function setSearchData(e){
         setSearch(e.target.value);
@@ -45,10 +44,10 @@ function Navbar() {
                     </div>
 
                     <div className="authBtn">
-                        {auth ?
+                        {user ?
                             <div className="flex cols gap-3">
-                                <Button value={"SignUp"}/>
-                                <Button value={"Login"}/>
+                                <Link to='/signup'> <Button value={"SignUp"}/> </Link>
+                                <Link to='/login'> <Button value={"Login"}/> </Link>
                             </div>
                             :
                             <Button value={"Profile"}/>

@@ -24,7 +24,7 @@ function Login(){
 
 
     function submitData(){
-        console.log( "email :", useData?.email1 , " Password : ", useData?.password1, useData?.phone); 
+        // console.log( "email :", useData?.email1 , " Password : ", useData?.password1, useData?.phone); 
     }
 
 
