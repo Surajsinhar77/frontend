@@ -6,9 +6,9 @@ import { useAuth } from "../common/AuthProvider";
 
 function Navbar() {
 
-    const { setSearch , searchItem, user} = useAuth();
+    const { setSearch, searchItem, user, logOut } = useAuth();
 
-    function setSearchData(e){
+    function setSearchData(e) {
         setSearch(e.target.value);
     }
 
@@ -23,14 +23,14 @@ function Navbar() {
                 </div>
 
                 <div className="serchItem flex gap-2">
-                    <input 
-                    className="block w-full rounded-md border-0 py-1.5 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
-                    type="text"
-                    onChange={setSearchData}
-                    placeholder="Search"
+                    <input
+                        className="block w-full rounded-md border-0 py-1.5 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        type="text"
+                        onChange={setSearchData}
+                        placeholder="Search"
                     />
 
-                    <Button onclick={searchItem}  value="Search"/>
+                    <Button onclick={searchItem} value="Search" />
                 </div>
                 <div className="btnAndNavlinsk flex gap-3">
                     <div className="navlinks flex cols items-center">
@@ -45,12 +45,18 @@ function Navbar() {
 
                     <div className="authBtn">
                         {user ?
-                            <div className="flex cols gap-3">
-                                <Link to='/signup'> <Button value={"SignUp"}/> </Link>
-                                <Link to='/login'> <Button value={"Login"}/> </Link>
+
+                            <div className="flex flex-row  gap-2">
+                                <Button value={"Profile"} />
+                                <Button onclick={logOut} value={"Logout"} />
                             </div>
+
                             :
-                            <Button value={"Profile"}/>
+                            <div className="flex cols gap-3">
+                                <Link to='/signup'> <Button value={"SignUp"} /> </Link>
+                                <Link to='/login'> <Button value={"Login"} /> </Link>
+                            </div>
+
                         }
                     </div>
                 </div>

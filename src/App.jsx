@@ -15,19 +15,12 @@ function App() {
   return (
     <>
       {
-        (user ? " " :
-          <Navbar />
+          (user ?  <Navbar />  : " " 
         )
       }
       <Routes>
         {
           (user ?
-            <>
-              <Route path='/login' element={< Login />} />
-              <Route path='/Signup' element={< Login />} />
-              <Route path="*" element={<Login/>} />
-            </>
-            :
             <>
               <Route path='/' element={<Home />} />
               <Route path='/about' element={< About />} />
@@ -35,6 +28,13 @@ function App() {
               <Route path='/service/' element={< Service />} />
               <Route path='/product/:id' element={< Foodpage />} />
               <Route path="*" element={<h1> 4o4 page Not Found </h1>} />
+            </>
+            :
+
+            <>
+              <Route path='/login' element={< Login />} />
+              <Route path='/Signup' element={< Login />} />
+              <Route path="*" element={<Login />} />
             </>
           )
         }
